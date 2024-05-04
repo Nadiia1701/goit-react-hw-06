@@ -7,8 +7,10 @@ export default function ContactList() {
   const contacts = useSelector(selectContacts);
   const filter = useSelector(selectNameFilter);
 
-  const visibleContacts = contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
+  const visibleContacts = contacts.filter(
+    (contact) =>
+      typeof contact.name === "string" &&
+      contact.name.toLowerCase().includes(filter.toLowerCase())
   );
 
   return (
