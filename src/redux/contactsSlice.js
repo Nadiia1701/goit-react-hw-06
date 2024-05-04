@@ -14,7 +14,7 @@ const contactsSlice = createSlice({
     initialState: contactInitialState,
     reducers: {
         addContact(state, action) {
-            state.items = [...state.items, action.payload]
+            state.items = [...state.items, action.payload] // чому не працює state.push(action.payload);
         },
         deleteContact(state, action) {
             const index = state.items.findIndex((item) => item.id === action.payload);
