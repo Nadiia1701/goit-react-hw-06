@@ -1,27 +1,27 @@
-import { useDispatch } from "react-redux";
-import { FaUser } from "react-icons/fa6";
-import { FaPhone } from "react-icons/fa6";
+import { FaPhoneSquareAlt } from "react-icons/fa";
+import { ImAddressBook } from "react-icons/im";
 import css from "./Contact.module.css";
+import { useDispatch } from "react-redux";
 import { deleteContact } from "../../redux/contactsSlice";
 
 export default function Contact({ contact: { id, name, number } }) {
   const dispatch = useDispatch();
 
-  const hendleDelete = () => {
+  const handleDelete = () => {
     dispatch(deleteContact(id));
   };
 
   return (
-    <div className={css.wrap}>
-      <div>
+    <div className={css.container}>
+      <div className={css.textContainer}>
         <p>
-          <FaUser /> {name}
+          <ImAddressBook /> {name}
         </p>
         <p>
-          <FaPhone /> {number}
+          <FaPhoneSquareAlt /> {number}
         </p>
       </div>
-      <button className={css.btn} onClick={hendleDelete}>
+      <button className={css.btn} onClick={handleDelete}>
         Delete
       </button>
     </div>
