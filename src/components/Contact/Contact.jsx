@@ -12,8 +12,8 @@ export default function Contact({ contact: { id, name, number } }) {
   };
 
   return (
-    <div className={css.container}>
-      <div className={css.textContainer}>
+    <div className={css.wrap}>
+      <div>
         <p>
           <FaUser /> {name}
         </p>
